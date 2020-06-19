@@ -1,0 +1,13 @@
+<div class="contents row">
+  <div class="container">
+    <%= form_tag('/contacts', method: :post) do %>
+      <h3>
+        サービスに関するお問い合わせ</br>
+      </h3>
+      <input type="text" name="name" placeholder="お名前を入力してください">
+      <input type="text" name="address" placeholder="メールアドレスを入力してください">
+      <textarea name="text" placeholder="お問い合わせ内容を入力してください" rows="10" cols="30"></textarea>
+      <input type="submit" value="内容を送信">
+    <% end %>
+  </div>
+</div>
