@@ -11,5 +11,6 @@
     </ul>
   </div>
   <%= simple_format(tweet.text) %>
-  <span class="name"><%= tweet.name %></span>
+  <span class="name"><%= tweet.name %><br><%= tweet.created_at.to_s(:datetime_jp) %></span>
+  
 </div>

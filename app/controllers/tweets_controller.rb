@@ -1,11 +1,15 @@
 class TweetsController < ApplicationController
   
   def index
-    @tweets = Tweet.order("created_at DESC").page(params[:page]).per(5)
+    @tweets = Tweet.order("created_at ASC").page(params[:page]).per(5)
   end
   
   def new
     
+  end
+  
+  def create
+    Tweet.create(tweet_params)
   end
   
   def show
@@ -18,12 +22,8 @@ class TweetsController < ApplicationController
     tweet.destroy
   end
   
-  def create
-    Tweet.create(tweet_params)
-  end
-
   private
   def tweet_params
-    params.permit(:name, :image, :text)
+    params.permit(:name, :images, :text)
   end
 end
